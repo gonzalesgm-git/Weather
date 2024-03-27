@@ -1,3 +1,5 @@
 Weather/bin/
 Weather/obj/
 .vs/
+Weather.Tests/bin/
+Weather.Tests/obj/

@@ -4,7 +4,13 @@ using static System.Net.WebRequestMethods;
 
 namespace Weather.Services
 {
-    public class RainfallService
+    public interface IRainfallService
+    {
+        public Task<BaseModel> GetRainfallData(string stationId);
+        public Task<BaseModel> GetRainfallData(string stationId, int limit);
+    }
+
+    public class RainfallService : IRainfallService
     {
         private readonly HttpClient _http;
         private readonly string _weatherUrl = "https://environment.data.gov.uk/flood-monitoring/id/stations/";
